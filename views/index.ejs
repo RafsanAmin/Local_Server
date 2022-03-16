@@ -1,0 +1,33 @@
+<h1>Welcome to the server!!</h1>
+<br />
+<br />
+<fieldset>
+  <legend>Upload File</legend>
+  <br />
+  <form action="/uploadFile" method="POST" enctype="multipart/form-data">
+    <input type="file" name="file" multiple />
+    <br />
+    <br />
+    <button type="submit">Upload</button>
+  </form>
+</fieldset>
+<fieldset>
+  <legend>Existing File In Uploads</legend>
+  <br />
+  <ul>
+    <% upFile.forEach(elem => { %>
+    <li><%=elem%></li>
+    <button>
+      <a
+        style="text-decoration: none; color: black"
+        href="/downloadFile/<%=elem%>"
+        download="<%=elem%>"
+        >Download</a
+      >
+    </button>
+    <button>
+      <a style="text-decoration: none; color: black" href="/deleteFile/<%=elem%>">Delete</a>
+    </button>
+    <% }) %>
+  </ul>
+</fieldset>

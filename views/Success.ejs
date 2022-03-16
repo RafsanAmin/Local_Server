@@ -1,0 +1,8 @@
+<h1>File <%=work%> Successfullly</h1>
+<p>This are the files You have <%=work%>ed</p>
+<ul>
+  <% files.forEach(e => { %>
+  <li><%=e.originalname%></li>
+  <% }) %>
+</ul>
+<a href="/">Go Back</a>
