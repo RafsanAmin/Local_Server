@@ -7,6 +7,7 @@ const getFilesList = require('./util/getFileList');
 const app = express();
 const port = 80;
 
+app.use(express.static('public/'));
 app.set('view engine', 'ejs');
 //routes
 app.get('/', async (req, res) => {
